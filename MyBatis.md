@@ -2,6 +2,12 @@
 > 参考资料
 >
 > [HOW2J.CN](https://how2j.cn/k/mybatis/mybatis-tutorial/1087.html)
+> 
+> [官网介绍](https://mybatis.org/mybatis-3/zh/index.html) 和上面教程目录类似，但缺少使用的操作，但参考方面更为具体
+>
+> [MyBatis-spring](http://mybatis.org/spring/zh/getting-started.html)
+>
+> [MyBatis Generator](http://mybatis.org/generator/) 自动生成 MyBatis 映射类、配置文件等
 
 ### 传统编码步骤
 > 非传统：可使用 MBG(MyBatis Generator) 来自动生成
@@ -67,8 +73,9 @@
             </select>
 
             <resultMap type="Category" id="categoryBean">
-            <!--property 对应的是类内属性的名字，column 与数据库表的列名相同，多表查询同名时需要特殊指明；-->
-            <!--总结：将 column 列的数据填充到类 property 的属性中去 @t-->
+                <!-- property 对应的是类内属性的名字，column 与数据库表的列名相同，多表查询同名时需要特殊指明；-->
+                <!-- 总结：当实体类和数据库表列名不一致时用于消除差别，将 column 列的数据填充到类 property 的属性中去 -->
+                <!-- 高级用法：https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Result_Maps -->
                 <id column="cid" property="id" />
                 <result column="cname" property="name" />
 
@@ -112,9 +119,10 @@
             }
             ```
 
-        2. Provider 模式（不用直接写 SQL 语句，但需要额外的类）
+        2. 使用语句构造器（不用直接写 SQL 语句，但需要额外的类）
+            > [链接](https://mybatis.org/mybatis-3/zh/statement-builders.html)
 
-            - 文件 CategoryDynaSqlProvider.java
+            - 文件 CategoryDynaSqlProvider.java（额外的类）
 
             ``` java
             public class CategoryDynaSqlProvider {
@@ -160,7 +168,7 @@
             - 文件 CategoryMapper.java
 
             ``` java
-            public interface Category() {
+            public interface CategoryMapper() {
                 @InsertProvider(type=CategoryDynaSqlProvider.class,method="add")
                 public int add(Category category);
 
