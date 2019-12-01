@@ -7,5 +7,5 @@
 
 1. Tomcat 启动乱码
 
-    修改 `Tomcat安装目录/conf/logging.properties` 下的  `java.util.logging.ConsoleHandler.encoding = utf-8` 改为 GBK 即可
+    修改 `Tomcat安装目录/conf/logging.properties` 下的  `java.util.logging.ConsoleHandler.encoding = utf-8` 改为 `GBK` 即可
     > 或在 Run->Edit Configurations->Tomcat server->VM Options 加上 `-Dfile.encoding=UTF-8` （未经测试）

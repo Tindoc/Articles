@@ -1,4 +1,6 @@
-## MySQL 的安装
+## MySQL
+
+### MySQL 的安装
 1. [官网](https://dev.mysql.com/downloads/)
     
     下载界面右侧可选其他版本
@@ -19,3 +21,54 @@
     
     原因：数据库删除用户后需要刷新权限才可以实现删除（或重启服务。`drop user 'xxxx'@’xxxx’;` + `flush privileges;`，再创建新用户 
     > `flush privileges` 本质上是将当前 user 和 privilege 表中的用户信息/权限设置从 MySql 库（MySQL数据库的内置库）中提取到内存里
+
+### 编码问题
+- 容易引发的问题
+    
+    - 英文插入成功，中文无法插入，提示 `\xE4\xF5` 之类的
+- 使用 UTF8 编码
+    ``` sql
+    CREATE TABLE tableName (
+        id int(11),
+        name varchar(25)
+    ) CHARSET=utf8;
+    ```
+
+- 查询/修改编码
+
+    - 数据库 
+        
+        `show variables like 'character_set_database';`
+
+        `alter database <db_name> character set utf8`
+
+    - 表
+
+        `show create table <table_name>`
+
+        `alter table <table_name> character set utf8;`
+    
+    - 字段
+
+        `alter table <表名> change <字段名> <字段名> <类型> character set utf8;`
+
+        > 例子：`alter table user change username username varchar(20) character set utf8 not null;`
+
+### 存储过程的使用
+``` sql
+create PROCEDURE proc_sel(
+    IN id integer,
+    out outname varchar(20))
+BEGIN
+    select name into outname from testtable where id=id limit 1;
+END
+```
+
+在 console 中调用：
+``` sql
+call proc_sel(1, @outname);
+select @outname;
+```
+
+> 解释：需要声明一个变量来保存 out 的结果，需要显示的话还需要再额外选择一次
+

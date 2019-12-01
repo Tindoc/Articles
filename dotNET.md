@@ -402,3 +402,6 @@ dataGridView1.Rows[0].Cells["cID"].Value.ToString();	// Name
 1. 如果出现“System.CannotUnloadAppDomainException”类型的未经处理的异常出现在 mscorlib.dll 中。其他信息: 卸载 Appdomain 时出错。 (异常来自 HRESULT:0x80131015)”
 
     解决：在 Form 的 Closing 事件中添加如下代码 `reportViewer1.LocalReport.ReleaseSandboxAppDomain();`
+
+2. 各版本最新的 Visual C++ 可再发行组件包下载合集
+    [https://www.cnblogs.com/VAllen/p/Visual-C-Plus-Plus-Collection-Download.html](https://www.cnblogs.com/VAllen/p/Visual-C-Plus-Plus-Collection-Download.html)
