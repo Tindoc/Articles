@@ -10,3 +10,9 @@
     可以使用 `jar ` 命令对应的功能来修改
 
     [参考](https://blog.csdn.net/daydayupzzc/article/details/80816529)
+
+
+### 其他
+1. URL encode 和 decode
+    
+    [详细参考](https://www.cnblogs.com/shishm/articles/1614407.html)
