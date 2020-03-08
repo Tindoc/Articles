@@ -1285,11 +1285,13 @@ public class MainApp {
 ---
 
 ## AOP(Aspect-Oriented Programming) 面向方面编程
-### 作用
+### aop作用
 把功能分为核心业务功能和周边功能，分别开发，最后把周边功能和核心业务功能 "编织" 在一起，这就叫 AOP
 
 ### 概念
 > 前三个比较重要
+>
+> [参考1](https://blog.csdn.net/anurnomeru/article/details/79798659)
 - Aspect
     一个模块具有一组提供横切需求的 APIs。例如，一个日志模块为了记录日志将被 AOP 方面调用。应用程序可以拥有任意数量的方面，这取决于需求。
 
@@ -1406,7 +1408,7 @@ public class MainApp {
             <!-- 声明 aspect -->
             <aop:aspect id="log" ref="logging">
                 <!-- 声明 pointcut -->
-                <aop:pointcut id="pointCutId" expression="execution(* com.tutorialspoint.*.*(..))" /> <!-- 这里的 * 号代替具体的类或者方法名 -->
+                <aop:pointcut id="pointCutId" expression="execution(* com.tutorialspoint.*.*(..))" /> <!-- 这里的 * 号代替具体的类或者方法名，execution 后面的第一个 * 指返回值 -->
 
                 <!-- 声明 advice -->
                 <aop:before pointcut-ref="pointCutId" method="beforeAdvice"/> <!-- 在 pointCut 之前执行 -->

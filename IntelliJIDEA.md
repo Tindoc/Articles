@@ -29,22 +29,26 @@
 6. 重要的快捷键
     - `Ctrl + D` 复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面
     - `Ctrl + Y` 删除光标所在行 或 删除选中的行
+    - **`Ctrl + P` 显示函数的参数**
     - `Ctrl + +` 展开代码
     - `Ctrl + -` 折叠代码
     - `Ctrl + /` 注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号
     - `Ctrl + End` 跳到文件尾
     - `Ctrl + Home` 跳到文件头
     - `Ctrl + Space` 基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号
-    - **`Alt + Enter` IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同**
-    - `Alt + Insert` 代码自动生成，如生成对象的 set/get 方法，构造函数，toString() 等
-    - **`Alt + F1` 定位当前文件在项目目录中的位置**
-    - `Shift + F6` 对文件/文件夹重命名（Refactor->Rename）
-    - **`Ctrl + Q` 查看类/方法的说明（Quick Document）**
-    - `Ctrl + Alt + L` 格式化代码，可以对当前文件和整个包目录使用
+    - **`Ctrl + Alt + L` 格式化代码，可以对当前文件和整个包目录使用**
     - `Ctrl + Shift + F` 根据输入内容查找整个项目 或 指定目录内文件
         - `Ctrl + F` 根据输入内容查找整个项目 或 指定目录内文件
     - `Ctrl + Shift + R` 根据输入内容替换对应内容，范围为当前文件
         - `Ctrl + R` 根据输入内容替换对应内容，范围为当前文件
+    - `Ctrl + Shift + -/+` 折叠/展开 选中或全部的代码
+        - `Ctrl + -/+` 折叠/展开 当前光标所在的代码
+    - `Shift + F6` 对文件/文件夹重命名（Refactor->Rename）
+    - `Shift + Shift` 根据文件名查找文件
+    - **`Alt + Enter` IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同**
+    - `Alt + Insert` 代码自动生成，如生成对象的 set/get 方法，构造函数，toString() 等
+    - **`Alt + F1` 定位当前文件在项目目录中的位置**
+    - **`Ctrl + Q` 查看类/方法的说明（Quick Document）**
     Debug 用
     - `F7` 进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中
     - `F8` 进入下一步，如果当前行断点是一个方法，则不进入当前方法体内
@@ -71,3 +75,6 @@
 12. 使用 IDEA 的 Database 工具生成了新的 Schemas 但刷新不出来
     
     `鼠标右键点击数据库连接名->Database Tools->Manage Shown Schemas` 查看是否有新的 Schemas
+
+## 其他
+1. 在 IDEA 中解决冲突，[参考](https://blog.csdn.net/sszgg2006/article/details/73342566)

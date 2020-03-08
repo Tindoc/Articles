@@ -12,10 +12,6 @@
         >
         > 可能会出现权限和需要重启系统的问题，如果实在不行请使用 `鼠标右键“我的电脑”->属性->高级系统设置->环境变量` 来添加
 
-4. GitHub 的 SSH Keys 设置
-
-    可参考 [官网](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
-
 5. XML 文件的特殊字符 `&`
 
     `&` 是 XML 中的特殊字符之一，需要使用需用 `&amp;` 代替
